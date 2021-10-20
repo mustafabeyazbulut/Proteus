@@ -1,0 +1,24 @@
+' while koþul wend
+
+TRISB=%00000011
+TRISC=0
+PORTC=0
+
+SYMBOL kirmizibutton=PORTB.0
+SYMBOL saributton=PORTB.1
+
+SYMBOL kirmiziled=PORTC.1
+SYMBOL sariled=PORTC.0
+
+'if kirmizibutton==0 then 
+'kirmiziled=1 :endif
+'if saributton==1 then 
+'sariled=1 :endif
+
+while kirmizibutton=0
+kirmiziled=1
+wend
+while saributton==1
+sariled=1
+wend
+

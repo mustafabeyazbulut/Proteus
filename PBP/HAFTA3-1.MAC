@@ -13,20 +13,6 @@ Label
     endif
     endm
 
-CMPGT?BCL macro Bin, Cin, Label
-    if ((Cin) < 0)
-        L?GOTO  Label
-    else
-      if ((Cin) < 0ffh)
-        CLRWDT?
-        MOVE?CA (Cin) + 1
-        CHK?RP  Bin
-        subwf   Bin, W
-        BIT?GOTO 1, STATUS, C, Label
-      endif
-    endif
-    endm
-
 GOTO?L macro Label
         L?GOTO  Label
     endm
@@ -36,32 +22,6 @@ LCDOUT?C macro Cin
         L?CALL  LCDOUT
     endm
 LCDOUT_USED = 1
-
-LCDOUTD?B macro Bin
-        MOVE?BA Bin
-        L?CALL  LCDOUTDEC
-    endm
-LCDOUTDEC_USED = 1
-
-NEXT?BCL macro Bin, Cin, Label
-    if ((Cin) == 1)
-        CHK?RP  Bin
-      if ((PREV_BANK == 0) & (CODE_SIZE <= 2))
-        incfsz  Bin, F
-        goto    Label
-      else
-        incf    Bin, F
-        BIT?GOTO 0, STATUS, Z, Label
-      endif
-    else
-        movlw   Cin
-        CHK?RP  Bin
-        addwf   Bin, F
-      if ((Cin) <= 255)
-        BIT?GOTO 0, STATUS, C, Label
-      endif
-    endif
-    endm
 
 PAUSE?C macro Cin
     if (((Cin) >> 8) == 0)

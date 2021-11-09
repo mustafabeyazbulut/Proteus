@@ -1,0 +1,59 @@
+DEFINE HSER_RCSTA 90h
+DEFINE HSER_TXSTA 24h
+DEFINE HSER_BAUD 9600
+DEFINE HSER_CLREOERR 1
+
+DEFINE LCD_DREG PORTD  'LCD DATA PORTUNUN BAÐLANDIÐI PÝC PORTU
+DEFINE LCD_DBIT 0      '4 BÝT BUS ÝÇÝN DATA BÝT BAÞLANGI. (0YADA4)
+DEFINE LCD_RSREG PORTE 'BAÐLANDIÐI PÝC PORTU
+DEFINE LCD_RSBIT 0     'RSNÝN BAÐLANTIÐI PÝC PORTE NÝN BÝT NUMARASI
+DEFINE LCD_EREG PORTE  'LCD E NÝN BAÐLANTIÐI PORT
+DEFINE LCD_EBIT 2      'LCD E NÝN BAÐLANDIÐI PÝC PORTE NÝN BÝT NUMARASI
+DEFINE LCD_BITS 8
+
+ADCON1=7               ' ANALOG BAÐLANTIYI DÝJÝTALE ÇEVÝRÝR.
+PAUSE 100
+
+'i VAR BYTE
+i VAR byte
+lcdout $fe,1
+
+
+'label:
+'       HSERIN [i]
+'       HSEROUT [i]
+'      lcdout i
+'     IF i=" " THEN LCDOUT $fe,1
+'GOTO label
+
+'label1:
+'    HSERIN 5000,git,[i]
+'    HSEROUT ["Girilen Karakter:",i,13,10]
+'goto label1
+
+'git:
+'    HSEROUT ["KARDO GIR ARTIK",13,10]
+'goto git    
+
+'label:
+'    HSERIN [DEC i]
+'    HSEROUT [DEC i,13,10]
+'    LCDOUT $fe,1,#i
+'goto label
+
+'label:
+'    HSERIN [DEC2 i]
+'    HSEROUT [DEC2 i,13,10]
+'    LCDOUT $fe,1,#i
+'goto label
+'label: hata var
+'    HSERIN [SKIP 3,i]
+'    HSEROUT [3,13,10]
+'goto label
+
+
+label1:               't ye bastýktan sonra çalýþýr
+    HSERIN [WAIT ("t"),STR i\2]
+    HSEROUT [STR i\2,13,10]
+goto label1
+  

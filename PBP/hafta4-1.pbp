@@ -1,3 +1,8 @@
+DEFINE HSER_RCSTA 90h
+DEFINE HSER_TXSTA 24h
+DEFINE HSER_BAUD 9600
+DEFINE HSER_CLREOERR 1
+
 DEFINE LCD_DREG PORTD  'LCD DATA PORTUNUN BAÐLANDIÐI PÝC PORTU
 DEFINE LCD_DBIT 0      '4 BÝT BUS ÝÇÝN DATA BÝT BAÞLANGI. (0YADA4)
 DEFINE LCD_RSREG PORTE 'BAÐLANDIÐI PÝC PORTU
@@ -13,10 +18,20 @@ i var byte 'saniye
 j var byte 'dk
 k var byte  'saat
 
+space VAR byte
+
 label:
 for k = 0 to 23
     for j=0 to 59
         for i=0 to 59 
+        HSEROUT ["Space basarak saat'i ayarlayabilirsiniz:",i,13,10]
+        HSERIN 100,label1,[space]
+        if space=" " then
+            GOto ayarla  
+        else
+               HSEROUT ["Sadece Space'e basabilirsiniz:",i,13,10]
+        endIF
+        label1:
         pause 100
         lcdout $fe,1
         LCDOUT $fe,$85,#(k dig 1),#(k dig 0),":",#(j dig 1),#(j dig 0),":",#(i dig 1),#(i dig 0)
@@ -24,7 +39,32 @@ for k = 0 to 23
         next i
     next j
 next k
-
 goto label
-' lcdout $fe,$85,#h2,#H1,":",#m2,#M1,":",#S2,#s1
+AYARLA:
+       HSEROUT ["Saati Gir:",13,10]
+       
+       HSERIN [DEC k]
+       IF K>23 THEN 
+       HSEROUT ["0-23 Arasý Bir Deðer Giriniz.",13,10] 
+       goto ayarla   
+       endIF
+       ayarla1:
+       HSEROUT ["Dakikayý Gir:",13,10]
+       HSERIN [DEC j]
+       IF j>59 THEN 
+       HSEROUT ["0-60 Arasý Bir Deðer Giriniz.(Dakika)",13,10] 
+       goto ayarla1 
+       ENDIF
+       ayarla2:
+       HSEROUT ["Saniyeyi Gir:",13,10]
+       HSERIN [DEC i]
+       IF i>59 THEN
+       HSEROUT ["0-60 Arasý Bir Deðer Giriniz.(Saniye)",13,10] 
+       goto ayarla2      
+       ENDIF
+
+       LCDOUT $fe,$C4,#(k dig 1),#(k dig 0),":",#(j dig 1),#(j dig 0),":",#(i dig 1),#(i dig 0)
+       goto label1
+GOTO ayarla
+
 

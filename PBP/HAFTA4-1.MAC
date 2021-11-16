@@ -27,6 +27,31 @@ CMPGT?BCL macro Bin, Cin, Label
     endif
     endm
 
+CMPLE?BCL macro Bin, Cin, Label
+    if ((Cin) >= 0ffh)
+        L?GOTO  Label
+    else
+      if ((Cin) >= 0)
+        CLRWDT?
+        MOVE?CA (Cin) + 1
+        CHK?RP  Bin
+        subwf   Bin, W
+        BIT?GOTO 0, STATUS, C, Label
+      endif
+    endif
+    endm
+
+CMPNE?BCL macro Bin, Cin, Label
+    if (((Cin) > -100h) & ((Cin) < 100h))
+        CLRWDT?
+        MOVE?BA Bin
+        sublw   Cin
+        BIT?GOTO 0, STATUS, Z, Label
+    else
+        L?GOTO  Label
+    endif
+    endm
+
 DIG?BCW macro Bin, Cin, Wout
         MOVE?BW Bin, R0
         movlw   Cin
@@ -38,6 +63,41 @@ DIG_USED = 1
 GOTO?L macro Label
         L?GOTO  Label
     endm
+
+HSERINCOUNT?C macro Cin
+        MOVE?CB Cin, R4 + 1
+    endm
+
+HSERINTIME?C macro Cin
+        MOVE?CW Cin, R6
+    endm
+
+HSERIN?BL macro Bout, Label
+        L?CALL  HSERINTO
+        BIT?GOTO 0, STATUS, C, Label
+        MOVE?AB Bout
+    endm
+HSERINTO_USED = 1
+
+HSERINDEC?B macro Bin
+        MOVE?CW HSERIN, R8
+        L?CALL  SERIN2DEC
+        MOVE?AB Bin
+    endm
+HSERIN_USED = 1
+SERIN2DEC_USED = 1
+
+HSEROUT?B macro Bin
+        MOVE?BA Bin
+        L?CALL  HSEROUT
+    endm
+HSEROUT_USED = 1
+
+HSEROUT?C macro Cin
+        movlw   Cin
+        L?CALL  HSEROUT
+    endm
+HSEROUT_USED = 1
 
 LCDOUT?C macro Cin
         movlw   Cin

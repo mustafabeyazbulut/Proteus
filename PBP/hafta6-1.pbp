@@ -20,6 +20,7 @@ hamle VAR byte
 hamle2 VAR byte
 deger1 var byte
 deger2 var byte
+devam var byte
 
     LCDOUT $fe,$40,0,14,31,31,31,14,0 'taþ
     LCDOUT $fe,$48,27,27,17,10,4,10,17 'makas
@@ -48,6 +49,9 @@ label:
         goto label1
     endIF
     label2:
+    
+    
+    
    ' sound ses,[80,10,40,10]
 goto label
 
@@ -114,6 +118,7 @@ sonuc:
     Lcdout "2. Oyuncu Kazandi"
         sound ses,[100,10,120,10]
     endIF
+    
     
     goto label2
 goto sonuc

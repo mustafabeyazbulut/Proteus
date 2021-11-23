@@ -113,6 +113,15 @@ CMPEQ?BCB macro Bin, Cin, Bout
     endif
     endm
 
+CMPEQ?BCL macro Bin, Cin, Label
+    if (((Cin) > -100h) & ((Cin) < 100h))
+        CLRWDT?
+        MOVE?BA Bin
+        sublw   Cin
+        BIT?GOTO 1, STATUS, Z, Label
+    endif
+    endm
+
 CMPGT?BCL macro Bin, Cin, Label
     if ((Cin) < 0)
         L?GOTO  Label
@@ -181,6 +190,12 @@ LCDOUT?C macro Cin
     endm
 LCDOUT_USED = 1
 
+LCDOUTD?B macro Bin
+        MOVE?BA Bin
+        L?CALL  LCDOUTDEC
+    endm
+LCDOUTDEC_USED = 1
+
 NEXT?BCL macro Bin, Cin, Label
     if ((Cin) == 1)
         CHK?RP  Bin
@@ -212,6 +227,17 @@ PAUSE?C macro Cin
     endif
     endm
 PAUSE_USED = 1
+
+SOUND?CC macro Cin1, Cin2
+        MOVE?CB Cin1, R1
+        movlw   Cin2
+        L?CALL  SOUND
+    endm
+SOUND_USED = 1
+
+SOUNDPIN?T macro Regin, Bitin
+        BIT?R1  Regin, Bitin
+    endm
 
 
 	LIST

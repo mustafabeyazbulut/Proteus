@@ -16,27 +16,45 @@ PAUSE 100
 symbol ses=PortB.0
 i var byte
 j var byte [5]
+space var byte
 
 kelime VAR byte [5]
 bilinenkelime VAR byte [5]
 tahmin VAR byte
 bilinen var byte
 yanlishamle var byte
-yanlishamle=5
-bilinen=0
 
 
 
-lcdout $fe,$40,14,4,4,4,4,0,0 'kafa
-lcdout $fe,$48,14,4,12,20,4,0,0  'sol kol
-lcdout $fe,$50,14,4,14,21,4,0,0  'sag kol
-lcdout $fe,$58,14,4,14,21,4,8,16 'sol bacak
-lcdout $fe,$60,14,4,14,21,4,10,17  'sag bacak
+lcdout $fe,$40,14,10,4,31,4,10,17,0 'adam
+lcdout $fe,$48,0,0,4,31,4,10,17,0 'kafasýz adam
+lcdout $fe,$50,0,0,0,0,14,10,14,0 'kafa
+LCDOUT $FE,$58,4,8,23,8,4,0,0,0   ' ok
 
 
 
 label:
+     bilinen=0
+     yanlishamle=5
+     tahmin=" "
+     for i=0 to 4
+     bilinenkelime[i]="*"
+     kelime[i]=" "
+     j[i]=0
+     next i
 
+    LCDOUT $FE,1
+    LCDOUT 0,"                  ",3
+    LCDOUT $FE,$C0,bilinenkelime[0]   
+    LCDOUT $FE,$C1,bilinenkelime[1]
+    LCDOUT $FE,$C2,bilinenkelime[2]
+    LCDOUT $FE,$C3,bilinenkelime[3]
+    LCDOUT $FE,$C4,bilinenkelime[4]
+    lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
+    
+
+    
+    
     HSEROUT [13,10,"1. Oyuncu 5 karakterli kelimesini girsin:",13,10]
     for i = 0 to 4
     HSERIN [kelime[i]]
@@ -45,56 +63,61 @@ label:
     
  
     HSEROUT [13,10,"Kelime girildi",13,10]
-    LCDOUT $FE,1
+    
     label2:
-    HSEROUT ["2. Oyuncu tahmine baþlasýn:",13,10]
+    HSEROUT ["2. Oyuncu tahmine baslasin:",13,10]
     HSERIN  [tahmin]
     
     
     if kelime[0]=tahmin && j[0]=0 then
     j[0]=1
     bilinenkelime[0]=kelime[0]
-     
+    sound ses,[100,10,120,10] 
     endif 
     if kelime[1]=tahmin && j[1]=0 then
     j[1]=1
     bilinenkelime[1]=kelime[1] 
+    sound ses,[100,10,120,10]
     endif 
     if kelime[2]=tahmin && j[2]=0 then
     j[2]=1
     bilinenkelime[2]=kelime[2] 
+    sound ses,[100,10,120,10]
     endif 
     if kelime[3]=tahmin && j[3]=0 then
     j[3]=1
     bilinenkelime[3]=kelime[3] 
+    sound ses,[100,10,120,10]
     endif 
     if kelime[4]=tahmin && j[4]=0 then
     j[4]=1
     bilinenkelime[4]=kelime[4] 
+    sound ses,[100,10,120,10]
     endif 
     
     if kelime[0]!=tahmin and kelime[1]!=tahmin and kelime[2]!=tahmin and kelime[3]!=tahmin and kelime[4]!=tahmin   then
     yanlishamle=yanlishamle-1
-    
+    sound ses,[80,10,40,10]
      if yanlishamle=4 then
      LCDOUT $FE,1
-     LCDOUT 0
+     LCDOUT 0,"               ",3
      endif
      if yanlishamle=3 then
      LCDOUT $FE,1
-     LCDOUT 1
+      LCDOUT 0,"           ",3
      endif
      if yanlishamle=2 then
      LCDOUT $FE,1
-     LCDOUT 2
+      LCDOUT 0,"        ",3
      endif
      if yanlishamle=1 then
      LCDOUT $FE,1
-     LCDOUT 3
+       LCDOUT 0,"    ",3
      endif
      if yanlishamle=0 then
-     LCDOUT $FE,1
-     LCDOUT 4
+       LCDOUT $FE,1
+       LCDOUT 0,3
+
      endif
      
     endif
@@ -105,29 +128,35 @@ label:
     LCDOUT $FE,$C2,bilinenkelime[2]
     LCDOUT $FE,$C3,bilinenkelime[3]
     LCDOUT $FE,$C4,bilinenkelime[4]
+    lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
 
     if j[0]=1 and j[1]=1 and j[2]=1 and j[3]=1 and j[4]=1 then
-      LCDOUT $FE,$C0,"kazandiniz"
+      'LCDOUT $FE,$C0,"kazandiniz"
      
     elseif yanlishamle=0 then
-      LCDOUT $FE,$C0,"adam asildi" 
+    
+    LCDOUT $FE,1
+    LCDOUT 1,2,3
+    LCDOUT $FE,$C0,bilinenkelime[0]   
+    LCDOUT $FE,$C1,bilinenkelime[1]
+    LCDOUT $FE,$C2,bilinenkelime[2]
+    LCDOUT $FE,$C3,bilinenkelime[3]
+    LCDOUT $FE,$C4,bilinenkelime[4]
+    lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
+      'LCDOUT $FE,$C0,"adam asildi" 
     else
     goto label2
     endif
-
-     bilinen=0
-     yanlishamle=5
-     tahmin=" "
-     for i=0 to 4
-     bilinenkelime[i]=" "
-     kelime[i]=" "
-     j[i]=0
-     next i
-
-        
- 
     
-   ' sound ses,[80,10,40,10]
+    
+    
+    label3:
+    HSEROUT ["Space basarak yeni oyuna gecebilirsiniz",13,10]
+    HSERIN  [space]
+    if space!=" " then
+    GOto label3
+    endIF
+
 goto label
 
 

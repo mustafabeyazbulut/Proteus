@@ -39,6 +39,19 @@ AIN?CBB macro Cin, Bout, Bndx
     endif
     endm
 
+AOUT?BBB macro Bin, Bndx, Bout
+        MOVE?BA Bndx
+        addlw   low (Bin)
+        movwf   FSR
+    if ((Bin) > 255)
+        bsf     STATUS, IRP
+    endif
+        MOVE?BB INDF, Bout
+    if ((Bin) > 255)
+        bcf     STATUS, IRP
+    endif
+    endm
+
 SUB?BCB macro Bin, Cin, Bout
     if ((Bout) == (Bin))
       if ((Cin) == 1)
@@ -113,6 +126,14 @@ CMPEQ?BCB macro Bin, Cin, Bout
     endif
     endm
 
+CMPEQ?BBL macro Bin1, Bin2, Label
+        CLRWDT?
+        MOVE?BA Bin1
+        CHK?RP  Bin2
+        subwf   Bin2, W
+        BIT?GOTO 1, STATUS, Z, Label
+    endm
+
 CMPEQ?BCL macro Bin, Cin, Label
     if (((Cin) > -100h) & ((Cin) < 100h))
         CLRWDT?
@@ -136,11 +157,12 @@ CMPGT?BCL macro Bin, Cin, Label
     endif
     endm
 
-CMPNE?BBB macro Bin1, Bin2, Bout
-        MOVE?BA Bin1
-        CHK?RP  Bin2
-        subwf   Bin2, W
+CMPNE?BCB macro Bin, Cin, Bout
+    if (((Cin) > -100h) & ((Cin) < 100h))
+        MOVE?BA Bin
+        sublw   Cin
 	btfss	STATUS, Z
+    endif
         movlw   -1
         MOVE?AB Bout
     endm

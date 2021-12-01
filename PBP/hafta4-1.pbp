@@ -21,17 +21,21 @@ k var byte  'saat
 space VAR byte
 
 label:
-for k = 0 to 23
-    for j=0 to 59
-        for i=0 to 59 
-        HSEROUT ["Space basarak saat'i ayarlayabilirsiniz:",i,13,10]
+for k = 0 to 23   'saat
+    for j=0 to 59      'dakika
+        for i=0 to 59         'saniye
+       
+        HSEROUT ["Space basarak saat'i ayarlayabilirsiniz:",13,10]
         HSERIN 100,label1,[space]
+         
         if space=" " then
             GOto ayarla  
-        else
-               HSEROUT ["Sadece Space'e basabilirsiniz:",i,13,10]
+        elseif space!=" "  then
+               HSEROUT ["Sadece Space'e basabilirsiniz:",13,10]   
         endIF
-        label1:
+        
+         label1:
+        
         pause 100
         lcdout $fe,1
         LCDOUT $fe,$85,#(k dig 1),#(k dig 0),":",#(j dig 1),#(j dig 0),":",#(i dig 1),#(i dig 0)
@@ -40,21 +44,27 @@ for k = 0 to 23
     next j
 next k
 goto label
+
+
+
 AYARLA:
        HSEROUT ["Saati Gir:",13,10]
        
-       HSERIN [DEC k]
+       HSERIN [DEC2 k]
        IF K>23 THEN 
        HSEROUT ["0-23 Arasý Bir Deðer Giriniz.",13,10] 
        goto ayarla   
        endIF
+       
        ayarla1:
+       
        HSEROUT ["Dakikayý Gir:",13,10]
        HSERIN [DEC j]
        IF j>59 THEN 
        HSEROUT ["0-60 Arasý Bir Deðer Giriniz.(Dakika)",13,10] 
        goto ayarla1 
        ENDIF
+       
        ayarla2:
        HSEROUT ["Saniyeyi Gir:",13,10]
        HSERIN [DEC i]

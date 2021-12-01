@@ -13,6 +13,15 @@ Label
     endif
     endm
 
+CMPEQ?BCL macro Bin, Cin, Label
+    if (((Cin) > -100h) & ((Cin) < 100h))
+        CLRWDT?
+        MOVE?BA Bin
+        sublw   Cin
+        BIT?GOTO 1, STATUS, Z, Label
+    endif
+    endm
+
 CMPGT?BCL macro Bin, Cin, Label
     if ((Cin) < 0)
         L?GOTO  Label
@@ -86,12 +95,6 @@ HSERINDEC?B macro Bin
     endm
 HSERIN_USED = 1
 SERIN2DEC_USED = 1
-
-HSEROUT?B macro Bin
-        MOVE?BA Bin
-        L?CALL  HSEROUT
-    endm
-HSEROUT_USED = 1
 
 HSEROUT?C macro Cin
         movlw   Cin

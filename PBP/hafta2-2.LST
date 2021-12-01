@@ -1,4 +1,4 @@
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  1
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                             r
   00000020            00027 R0                              EQU     RAM_START + 000h
                       00028 ; C:\PBP\PBPPIC14.RAM           00013   A00022  R1      VAR     WORD BANK0 SYSTEM       ' System Registe
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  2
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -99,7 +99,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000036            00053 RR1                             EQU     RAM_START + 016h
                       00054 ; C:\PBP\PBPPIC14.RAM           00023   A00037  RR2     VAR     BYTE BANK0 SYSTEM       ' Pin 2 Register
   00000037            00055 RR2                             EQU     RAM_START + 017h
-                      00056 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00012   A00038  i var byte
+                      00056 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00014   A00038  i var byte
   00000038            00057 _i                              EQU     RAM_START + 018h
                       00058 ; C:\PBP\16F877.BAS             00022   PORTL   VAR     PORTB
   00000006            00059 _PORTL                          EQU      PORTB
@@ -110,26 +110,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00064 ; C:\PBP\16F877.BAS             00025   TRISH   VAR     TRISC
   00000087            00065 _TRISH                          EQU      TRISC
                       00066 #define _button1                _PORTB??7
-                      00067 #define _ledyellow              _PORTC??0
-                      00068 #define _ledgreen               _PORTC??1
-                      00069 #define _ledred                 _PORTC??2
-                      00070 #define _ledblue                _PORTC??3
-                      00071 #define _PORTB??7                PORTB, 007h
-                      00072 #define _PORTC??0                PORTC, 000h
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  3
+                      00067 #define _PORTB??7                PORTB, 007h
+                      00068         INCLUDE "HAFTA2-2.MAC"
+                      00001 
+                      00071         LIST
+                      00069         INCLUDE "C:\PBP\PBPPIC14.LIB"
+                      00001 ;******************************************************************
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00073 #define _PORTC??1                PORTC, 001h
-                      00074 #define _PORTC??2                PORTC, 002h
-                      00075 #define _PORTC??3                PORTC, 003h
-                      00076         INCLUDE "HAFTA2-2.MAC"
-                      00001 
-                      00071         LIST
-                      00077         INCLUDE "C:\PBP\PBPPIC14.LIB"
-                      00001 ;******************************************************************
                       00002 ;*  PBPPIC14.LIB                                                  *
                       00003 ;*                                                                *
                       00004 ;*  By        : Leonard Zerman, Jeff Schmoyer                     *
@@ -175,12 +167,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     ifndef NO_CLRWDT
 0019   0064               M         clrwdt
                           M     else
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  4
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         nop
                           M     endif
 001A   0FA1           06399         incfsz  R0 + 1, F       ; 1 / 2
@@ -189,6 +175,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 001D   281E           06402         goto    $ + 1           ; 2 / 0 Burn an extra cycle
 001E   1CA0           06403         btfss   R0, 1           ; 1 / 2
 001F   2822           06404         goto    pauseusdone     ; 2 / 0
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
 0020   0000           06405         nop                     ; 1
 0021   2822           06406         goto    $ + 1           ; 2 Burn an extra 2 cycles
 0022   0008           06407 pauseusdone return              ; 2 + 3 (call + setup)
@@ -207,22 +199,22 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0028                  07798 INIT
                       07836   LIST
 0028                  07837 main
-                      00078 
+                      00070 
+                      00071 
+                      00072 ; C:\PBP\16F877.BAS             00012   BANK0   $0020, $007F
+                      00073 ; C:\PBP\16F877.BAS             00013   BANK1   $00A0, $00EF
+                      00074 ; C:\PBP\16F877.BAS             00014   BANK2   $0110, $016F
+                      00075 ; C:\PBP\16F877.BAS             00015   BANK3   $0190, $01EF
+                      00076 ; C:\PBP\16F877.BAS             00016   EEPROM  $2100, $21FF
+                      00077 ; C:\PBP\16F877.BAS             00017   LIBRARY "PBPPIC14"
+                      00078 ; C:\PBP\16F877.BAS             00018   DEFINE  CODE_SIZE 8
                       00079 
-                      00080 ; C:\PBP\16F877.BAS             00012   BANK0   $0020, $007F
-                      00081 ; C:\PBP\16F877.BAS             00013   BANK1   $00A0, $00EF
-                      00082 ; C:\PBP\16F877.BAS             00014   BANK2   $0110, $016F
-                      00083 ; C:\PBP\16F877.BAS             00015   BANK3   $0190, $01EF
-                      00084 ; C:\PBP\16F877.BAS             00016   EEPROM  $2100, $21FF
-                      00085 ; C:\PBP\16F877.BAS             00017   LIBRARY "PBPPIC14"
-                      00086 ; C:\PBP\16F877.BAS             00018   DEFINE  CODE_SIZE 8
-                      00087 
-                      00088 ; C:\PBP\16F877.BAS             00020           include "PIC14EXT.BAS"
-                      00089 
-                      00090 ; C:\PBP\16F877.BAS             00027           include "PBPPIC14.RAM"
-                      00091 
-                      00092 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00002   TRISB=%10000000
-                      00093         MOVE?CB 080h, TRISB
+                      00080 ; C:\PBP\16F877.BAS             00020           include "PIC14EXT.BAS"
+                      00081 
+                      00082 ; C:\PBP\16F877.BAS             00027           include "PBPPIC14.RAM"
+                      00083 
+                      00084 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00002   TRISB=%11110000 
+                      00085         MOVE?CB 0F0h, TRISB
                           M         CHK?RP  TRISB
                           M     if (((TRISB) & 180h) == 0)
                           M       if (PREV_BANK == 1)
@@ -234,12 +226,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
                           M         bcf     STATUS, RP1
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  5
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       endif
                           M PREV_BANK = 0
                           M     endif
@@ -248,6 +234,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 0)
 0028   1683               M         bsf     STATUS, RP0
                           M       endif
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       if (PREV_BANK == 2)
                           M         bsf     STATUS, RP0
                           M         bcf     STATUS, RP1
@@ -285,27 +277,28 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M PREV_BANK = 3
                           M     endif
-                          M     if (low (080h) == 0)
+                          M     if (low (0F0h) == 0)
                           M         clrf    TRISB
                           M     else
-0029   3080               M         movlw   low (080h)
+0029   30F0               M         movlw   low (0F0h)
 002A   0086               M         movwf   TRISB
                           M     endif
-                      00094 
-                      00095 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00003   PORTB=0
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  6
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-                      00096         MOVE?CB 000h, PORTB
+                      00086 
+                      00087 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00006   PORTB=0  'Biz buna çýkýþ portunu
+                            temizlemediyoruz.Eðerbunu yapmazsak daha önceden aklýnda kalan bilgiye göre ilk çalýþtýrmada LED
+                      00088         MOVE?CB 000h, PORTB
                           M         CHK?RP  PORTB
                           M     if (((PORTB) & 180h) == 0)
                           M       if (PREV_BANK == 1)
 002B   1283               M         bcf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bcf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
@@ -352,12 +345,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 2)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  7
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bsf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 3
@@ -365,18 +352,20 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     if (low (000h) == 0)
 002C   0186               M         clrf    PORTB
                           M     else
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         movlw   low (000h)
                           M         movwf   PORTB
                           M     endif
-                      00097 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00005   SYMBOL button1=PORTB.7
-                      00098 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00007   SYMBOL ledyellow=PORTC.0
-                      00099 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00008   SYMBOL ledgreen=PORTC.1
-                      00100 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00009   SYMBOL ledred=PORTC.2
-                      00101 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00010   SYMBOL ledblue=PORTC.3
-                      00102 
-                      00103 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00014   label:
-                      00104 
-                      00105         LABEL?L _label  
+                      00089 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00007   SYMBOL button1=PORTB.7
+                      00090 
+                      00091 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00016   label:
+                      00092 
+                      00093         LABEL?L _label  
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
@@ -392,9 +381,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     else
 002D                      M _label
                           M     endif
-                      00106 
-                      00107 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00015   while button1=1
-                      00108         LABEL?L L00001  
+                      00094 
+                      00095 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00017   while button1=1
+                      00096         LABEL?L L00001  
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
@@ -410,13 +399,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     else
 002D                      M L00001
                           M     endif
-                      00109         CMPNE?TCL       _button1, 001h, L00002
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  8
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
+                      00097         CMPNE?TCL       _button1, 001h, L00002
                           M     if ((001h) == 0)
                           M         CLRWDT?
                           M         BIT?GOTO 1, PORTB, 007h,  L00002
@@ -428,6 +411,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M         BIT?GOTO 0, PORTB, 007h,  L00002
                           M     ifdef USE_LINKER
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         CLRWDT?
                           M     else
                           M       if ($ == (L00002))
@@ -470,12 +459,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     else
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE  9
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bcf     STATUS, RP0
                           M     endif
                           M     if ((PREV_BANK & 2) != 0)
@@ -487,6 +470,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       else
                           M         btfsc   PORTB, 007h
                           M       endif
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M     endif
                           M 
 0031   283A               M         goto    L00002
@@ -494,9 +483,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         L?GOTO  L00002
                           M       endif
                           M     endif
-                      00110 
-                      00111 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00016   i=i+1
-                      00112         ADD?BCB _i, 001h, _i
+                      00098 
+                      00099 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00018   i=i+1
+                      00100         ADD?BCB _i, 001h, _i
                           M     if ((_i)   == (_i))
                           M       if ((001h) == 1)
                           M         CHK?RP  _i
@@ -529,12 +518,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M 
                           M     if (((_i)    & 180h) == 100h)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 10
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       if (PREV_BANK == 0)
                           M         bsf     STATUS, RP1
                           M       endif
@@ -546,6 +529,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 2
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M     endif
                           M 
                           M     if (((_i)    & 180h) == 180h)
@@ -579,21 +568,16 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         MOVE?AB _i
                           M       endif
                           M     endif
-                      00113 
-                      00114 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00017   portb=i:PAUSE 100
-                      00115         MOVE?BB _i, PORTB
+                      00101 
+                      00102 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00019   portb=i:PAUSE 100    ': koyarsak
+                             yan yana kod yazabiliriz.
+                      00103         MOVE?BB _i, PORTB
                           M         CHK?RP  _i
                           M     if (((_i)    & 180h) == 0)
                           M       if (PREV_BANK == 1)
                           M         bcf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 11
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bcf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
@@ -604,6 +588,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M 
                           M     if (((_i)    & 180h) == 80h)
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       if (PREV_BANK == 0)
                           M         bsf     STATUS, RP0
                           M       endif
@@ -647,12 +637,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0033   0838               M         movf    _i,  W
                           M         CHK?RP  PORTB
                           M     if (((PORTB) & 180h) == 0)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 12
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       if (PREV_BANK == 1)
                           M         bcf     STATUS, RP0
                           M       endif
@@ -663,6 +647,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP0
                           M         bcf     STATUS, RP1
                           M       endif
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
   00000000                M PREV_BANK = 0
                           M     endif
                           M 
@@ -706,21 +696,22 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 3
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 13
+                          M     endif
+0034   0086               M         movwf   PORTB
+                      00104 
+                      00105 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00019   portb=i:PAUSE 100    ': koyarsak
+                             yan yana kod yazabiliriz.
+                      00106         PAUSE?C 064h
+                          M     if (((064h) >> 8) == 0)
+                          M         MOVE?CA 064h
+0035   3064               M         movlw   low (064h)
+                          M         L?CALL  PAUSE
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 13
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M     endif
-0034   0086               M         movwf   PORTB
-                      00116 
-                      00117 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00017   portb=i:PAUSE 100
-                      00118         PAUSE?C 064h
-                          M     if (((064h) >> 8) == 0)
-                          M         MOVE?CA 064h
-0035   3064               M         movlw   low (064h)
-                          M         L?CALL  PAUSE
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
@@ -765,12 +756,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M             else
                           M         bsf     PCLATH, 4
                           M             endif
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 14
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M           endif
                           M         else
                           M           if (CODE_SIZE > 2)
@@ -780,6 +765,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M               if (((PAUSE) & 800h) == 0)
                           M         bcf     PCLATH, 3
                           M               else
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 14
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bsf     PCLATH, 3
                           M               endif
                           M               if (CODE_SIZE > 4)
@@ -801,9 +792,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         MOVE?CA low (064h)
                           M         L?CALL  PAUSEL
                           M     endif
-                      00119 
-                      00120 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00018   wend
-                      00121         GOTO?L  L00001
+                      00107 
+                      00108 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00020   wend
+                      00109         GOTO?L  L00001
                           M         L?GOTO  L00001
                           M     ifdef USE_LINKER
                           M         CLRWDT?
@@ -824,12 +815,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
                           M     ifdef USE_LINKER
                           M       if (CODE_SIZE > 2)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 15
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         pagesel L00001
                           M       endif
                           M     else
@@ -839,6 +824,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     PCLATH, 3
                           M           else
                           M         bsf     PCLATH, 3
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 15
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M           endif
                           M         endif
                           M         if (CODE_SIZE > 4)
@@ -883,21 +874,21 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M               endif
                           M             endif
                           M           endif
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 16
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         endif
                           M       endif
                           M     endif
                           M 
 0039   282D               M         goto    L00001
-                      00122         LABEL?L L00002  
+                      00110         LABEL?L L00002  
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M     endif
                           M     if ((PREV_BANK & 2) != 0)
                           M         bcf     STATUS, RP1
@@ -910,9 +901,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     else
 003A                      M L00002
                           M     endif
-                      00123 
-                      00124 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00019   portb=0
-                      00125         MOVE?CB 000h, PORTB
+                      00111 
+                      00112 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00022   portb=0
+                      00113         MOVE?CB 000h, PORTB
                           M         CHK?RP  PORTB
                           M     if (((PORTB) & 180h) == 0)
                           M       if (PREV_BANK == 1)
@@ -942,12 +933,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = 1
                           M     endif
                           M 
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 17
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M     if (((PORTB) & 180h) == 100h)
                           M       if (PREV_BANK == 0)
                           M         bsf     STATUS, RP1
@@ -957,6 +942,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bcf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 2
@@ -981,9 +972,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         movlw   low (000h)
                           M         movwf   PORTB
                           M     endif
-                      00126 
-                      00127 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00020   i=0
-                      00128         MOVE?CB 000h, _i
+                      00114 
+                      00115 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00023   i=0
+                      00116         MOVE?CB 000h, _i
                           M         CHK?RP  _i
                           M     if (((_i)    & 180h) == 0)
                           M       if (PREV_BANK == 1)
@@ -1001,12 +992,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
                           M     if (((_i)    & 180h) == 80h)
                           M       if (PREV_BANK == 0)
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 18
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bsf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
@@ -1016,6 +1001,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP1
                           M       endif
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 18
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M PREV_BANK = 1
                           M     endif
                           M 
@@ -1052,20 +1043,14 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         movlw   low (000h)
                           M         movwf   _i
                           M     endif
-                      00129 
-                      00130 ; C:\USERS\MUSTAFA\DESKTOP\PBP-DERS\HAFTA2-2.PBP        00021   goto label
-                      00131         GOTO?L  _label
+                      00117 
+                      00118 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00024   goto label
+                      00119         GOTO?L  _label
                           M         L?GOTO  _label
                           M     ifdef USE_LINKER
                           M         CLRWDT?
                           M     else
                           M       if ($ == (_label))
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 19
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         CLRWDT?
                           M       endif
                           M     endif
@@ -1075,6 +1060,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP0
                           M     endif
                           M     if ((PREV_BANK & 2) != 0)
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 19
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bcf     STATUS, RP1
                           M     endif
   00000000                M PREV_BANK = 0
@@ -1119,12 +1110,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M           if (CODE_SIZE > 2)
                           M             if (((_label) & 1800h) == 0)
 003C   018A               M         clrf    PCLATH
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 20
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M             else
                           M               if (((_label) & 800h) == 0)
                           M         bcf     PCLATH, 3
@@ -1134,6 +1119,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M               if (CODE_SIZE > 4)
                           M                 if (((_label) & 1000h) == 0)
                           M         bcf     PCLATH, 4
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 20
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M                 else
                           M         bsf     PCLATH, 4
                           M                 endif
@@ -1145,9 +1136,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M 
 003D   282D               M         goto    _label
-                      00132 
-                      00133         END
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 21
+                      00120 
+                      00121         END
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 21
 
 
 SYMBOL TABLE
@@ -1206,7 +1197,7 @@ CCP2CON                           0000001D
 CCP2IE                            00000000
 CCP2IF                            00000000
 CCP2M0                            00000000
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 22
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 22
 
 
 SYMBOL TABLE
@@ -1265,7 +1256,7 @@ EEPGD                             00000007
 EEPROM_END                        000021FF
 EEPROM_START                      00002100
 F                                 00000001
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 23
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 23
 
 
 SYMBOL TABLE
@@ -1324,7 +1315,7 @@ LCD_RSREG                         00000005
 LCD_RWBIT                         00000004
 LCD_RWREG                         00000005
 MOVE?AB                           
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 24
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 24
 
 
 SYMBOL TABLE
@@ -1383,7 +1374,7 @@ PCFG1                             00000001
 PCFG2                             00000002
 PCFG3                             00000003
 PCL                               00000002
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 25
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 25
 
 
 SYMBOL TABLE
@@ -1442,7 +1433,7 @@ RBIE                              00000003
 RBIF                              00000000
 RC0                               00000000
 RC1                               00000001
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 26
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 26
 
 
 SYMBOL TABLE
@@ -1501,7 +1492,7 @@ SSPCON2                           00000091
 SSPEN                             00000005
 SSPIE                             00000003
 SSPIF                             00000003
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 27
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 27
 
 
 SYMBOL TABLE
@@ -1560,7 +1551,7 @@ TRISB2                            00000002
 TRISB3                            00000003
 TRISB4                            00000004
 TRISB5                            00000005
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 28
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 28
 
 
 SYMBOL TABLE
@@ -1619,7 +1610,7 @@ _CP_HALF                          00001FDF
 _CP_OFF                           00003FFF
 _CP_UPPER_256                     00002FEF
 _DEBUG_OFF                        00003FFF
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 29
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 29
 
 
 SYMBOL TABLE
@@ -1640,10 +1631,6 @@ _LP_OSC                           00003FFC
 _LVP_OFF                          00003F7F
 _LVP_ON                           00003FFF
 _PORTB??7                         PORTB, 007h
-_PORTC??0                         PORTC, 000h
-_PORTC??1                         PORTC, 001h
-_PORTC??2                         PORTC, 002h
-_PORTC??3                         PORTC, 003h
 _PORTH                            00000007
 _PORTL                            00000006
 _PWRTE_OFF                        00003FFF
@@ -1665,16 +1652,12 @@ __16F877                          00000001
 _button1                          _PORTB??7
 _i                                00000038
 _label                            0000002D
-_ledblue                          _PORTC??3
-_ledgreen                         _PORTC??1
-_ledred                           _PORTC??2
-_ledyellow                        _PORTC??0
 main                              00000028
 pauseloop                         00000003
 pauseusdone                       00000022
 pauseush                          00000018
 pauseusloop                       00000015
-MPASM  5.44                      HAFTA2-2.ASM   10-19-2021  16:07:11         PAGE 30
+MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 30
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)

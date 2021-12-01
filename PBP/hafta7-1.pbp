@@ -15,16 +15,26 @@ ADCON1=7               ' ANALOG BAÐLANTIYI DÝJÝTALE ÇEVÝRÝR.
 PAUSE 100
 symbol ses=PortB.0
 i var byte
-j var byte [5]
+harfkontrol var byte [5]
 space var byte
 
-kelime VAR byte [5]
-bilinenkelime VAR byte [5]
+harf VAR byte [5]
+bilinenharf VAR byte [5]
 tahmin VAR byte
 bilinen var byte
 yanlishamle var byte
+degisken var byte
 
-
+'$FE,1 Ekraný siler.
+'$FE,2 Satir basýna dön
+'$FE,$0C Ýmleç(Kursör) görüntüsünü yok eder
+'$FE,$0E Ýmleci alt çizgi biçimine getirir
+'$FE,$0F Ýmleci yanýp/Soner yapar
+'$FE,$10 Ýmleci 1 pozisyon sola getirir
+'$FE,$14 Ýmleci 1 pozisyon saga getirir
+'$FE,$C0 Ýmleci ikinci satirin baþýna getirir
+'$FE,$94 Ýmleci üçüncü satirin baþýna getirir
+'$FE,$D4 Ýmleci dördüncü satirin baþýna getirir
 
 lcdout $fe,$40,14,10,4,31,4,10,17,0 'adam
 lcdout $fe,$48,0,0,4,31,4,10,17,0 'kafasýz adam
@@ -38,113 +48,156 @@ label:
      yanlishamle=5
      tahmin=" "
      for i=0 to 4
-     bilinenkelime[i]="*"
-     kelime[i]=" "
-     j[i]=0
+     bilinenharf[i]="*"
+     harf[i]=" "
+     harfkontrol[i]=0
      next i
 
     LCDOUT $FE,1
     LCDOUT 0,"                  ",3
-    LCDOUT $FE,$C0,bilinenkelime[0]   
-    LCDOUT $FE,$C1,bilinenkelime[1]
-    LCDOUT $FE,$C2,bilinenkelime[2]
-    LCDOUT $FE,$C3,bilinenkelime[3]
-    LCDOUT $FE,$C4,bilinenkelime[4]
+    LCDOUT $FE,$C0,bilinenharf[0]   
+    LCDOUT $FE,$C1,bilinenharf[1]
+    LCDOUT $FE,$C2,bilinenharf[2]
+    LCDOUT $FE,$C3,bilinenharf[3]
+    LCDOUT $FE,$C4,bilinenharf[4]
     lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
     
 
     
     
-    HSEROUT [13,10,"1. Oyuncu 5 karakterli kelimesini girsin:",13,10]
+    HSEROUT [13,10,"1. Oyuncu 5 karakterli harfsini girsin:",13,10]
     for i = 0 to 4
-    HSERIN [kelime[i]]
+    HSERIN [harf[i]]
     HSEROUT ["*"]
     NExt i
     
  
-    HSEROUT [13,10,"Kelime girildi",13,10]
+    HSEROUT [13,10,"harf girildi",13,10]
     
     label2:
     HSEROUT ["2. Oyuncu tahmine baslasin:",13,10]
     HSERIN  [tahmin]
     
     
-    if kelime[0]=tahmin && j[0]=0 then
-    j[0]=1
-    bilinenkelime[0]=kelime[0]
-    sound ses,[100,10,120,10] 
-    endif 
-    if kelime[1]=tahmin && j[1]=0 then
-    j[1]=1
-    bilinenkelime[1]=kelime[1] 
-    sound ses,[100,10,120,10]
-    endif 
-    if kelime[2]=tahmin && j[2]=0 then
-    j[2]=1
-    bilinenkelime[2]=kelime[2] 
-    sound ses,[100,10,120,10]
-    endif 
-    if kelime[3]=tahmin && j[3]=0 then
-    j[3]=1
-    bilinenkelime[3]=kelime[3] 
-    sound ses,[100,10,120,10]
-    endif 
-    if kelime[4]=tahmin && j[4]=0 then
-    j[4]=1
-    bilinenkelime[4]=kelime[4] 
-    sound ses,[100,10,120,10]
-    endif 
+    for i=0 to 4
+        if harf[i]=tahmin and harfkontrol[i]=0 then
+            harfkontrol[i]=1
+            bilinenharf[i]=harf[i]
+            sound ses,[100,10,120,10] 
+        endif
+    next i
     
-    if kelime[0]!=tahmin and kelime[1]!=tahmin and kelime[2]!=tahmin and kelime[3]!=tahmin and kelime[4]!=tahmin   then
-    yanlishamle=yanlishamle-1
-    sound ses,[80,10,40,10]
-     if yanlishamle=4 then
-     LCDOUT $FE,1
-     LCDOUT 0,"               ",3
-     endif
-     if yanlishamle=3 then
-     LCDOUT $FE,1
-      LCDOUT 0,"           ",3
-     endif
-     if yanlishamle=2 then
-     LCDOUT $FE,1
-      LCDOUT 0,"        ",3
-     endif
-     if yanlishamle=1 then
-     LCDOUT $FE,1
-       LCDOUT 0,"    ",3
-     endif
-     if yanlishamle=0 then
-       LCDOUT $FE,1
-       LCDOUT 0,3
+'    if harf[0]=tahmin && harfkontrol[0]=0 then
+'    harfkontrol[0]=1
+'    bilinenharf[0]=harf[0]
+'    sound ses,[100,10,120,10] 
+'    endif   
+'    if harf[1]=tahmin && harfkontrol[1]=0 then
+'    harfkontrol[1]=1
+'    bilinenharf[1]=harf[1] 
+'    sound ses,[100,10,120,10]
+'    endif 
+'    if harf[2]=tahmin && harfkontrol[2]=0 then
+'    harfkontrol[2]=1
+'    bilinenharf[2]=harf[2] 
+'    sound ses,[100,10,120,10]
+'    endif 
+'    if harf[3]=tahmin && harfkontrol[3]=0 then
+'    harfkontrol[3]=1
+'    bilinenharf[3]=harf[3] 
+'    sound ses,[100,10,120,10]
+'    endif 
+'    if harf[4]=tahmin && harfkontrol[4]=0 then
+'    harfkontrol[4]=1
+'    bilinenharf[4]=harf[4] 
+'    sound ses,[100,10,120,10]
+'    endif 
+    
+    for i=0 to  4
+         if harf[i]!=tahmin then
+               if i=4 and degisken!=1 then 'forun her deðerinde hamleyi 1 azaltmasýn ---- Degisken 0 ise hamle doðru olan yok anlamýna gelir  --- 
+               ' i=4 olduðunda sadece yanlis hamle azalsýn yoksa 1 harf girildiðinde sürekli yanlishamle 1 azaltýlýr. 
+               yanlishamle=yanlishamle-1
+               sound ses,[80,10,40,10]    
+               endif
+               
+               if yanlishamle=4 then
+                LCDOUT $FE,1
+                LCDOUT 0,"               ",3
+                endif
+                if yanlishamle=3 then
+                LCDOUT $FE,1
+                LCDOUT 0,"           ",3
+                endif
+                if yanlishamle=2 then
+                LCDOUT $FE,1
+                LCDOUT 0,"        ",3
+                endif
+                if yanlishamle=1 then
+                LCDOUT $FE,1
+                LCDOUT 0,"    ",3
+                endif
+                if yanlishamle=0 then
+                LCDOUT $FE,1
+                LCDOUT 0,3
+                endif
+         else  ' doðru hamle var ise degisken 1 olur. 
+         degisken=1
+         endif
+    next i
+       degisken=0
+    
+'    if harf[0]!=tahmin and harf[1]!=tahmin and harf[2]!=tahmin and harf[3]!=tahmin and harf[4]!=tahmin   then
+'    yanlishamle=yanlishamle-1
+    
+'     if yanlishamle=4 then
+'     LCDOUT $FE,1
+'     LCDOUT 0,"               ",3
+'     endif
+'     if yanlishamle=3 then
+'     LCDOUT $FE,1
+'      LCDOUT 0,"           ",3
+'     endif
+'     if yanlishamle=2 then
+'     LCDOUT $FE,1
+'      LCDOUT 0,"        ",3
+'     endif
+'     if yanlishamle=1 then
+'     LCDOUT $FE,1
+'       LCDOUT 0,"    ",3
+'     endif
+'     if yanlishamle=0 then
+'       LCDOUT $FE,1
+'       LCDOUT 0,3
 
-     endif
+'     endif
      
-    endif
+'    endif
     
     
-    LCDOUT $FE,$C0,bilinenkelime[0]   
-    LCDOUT $FE,$C1,bilinenkelime[1]
-    LCDOUT $FE,$C2,bilinenkelime[2]
-    LCDOUT $FE,$C3,bilinenkelime[3]
-    LCDOUT $FE,$C4,bilinenkelime[4]
+    LCDOUT $FE,$C0,bilinenharf[0]   
+    LCDOUT $FE,$C1,bilinenharf[1]
+    LCDOUT $FE,$C2,bilinenharf[2]
+    LCDOUT $FE,$C3,bilinenharf[3]
+    LCDOUT $FE,$C4,bilinenharf[4]
     lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
 
-    if j[0]=1 and j[1]=1 and j[2]=1 and j[3]=1 and j[4]=1 then
-      'LCDOUT $FE,$C0,"kazandiniz"
+    if harfkontrol[0]=1 and harfkontrol[1]=1 and harfkontrol[2]=1 and harfkontrol[3]=1 and harfkontrol[4]=1 then
+       LCDOUT $FE,$C0,"Kazandiniz          " 
      
     elseif yanlishamle=0 then
     
     LCDOUT $FE,1
     LCDOUT 1,2,3
-    LCDOUT $FE,$C0,bilinenkelime[0]   
-    LCDOUT $FE,$C1,bilinenkelime[1]
-    LCDOUT $FE,$C2,bilinenkelime[2]
-    LCDOUT $FE,$C3,bilinenkelime[3]
-    LCDOUT $FE,$C4,bilinenkelime[4]
+    LCDOUT $FE,$C0,bilinenharf[0]   
+    LCDOUT $FE,$C1,bilinenharf[1]
+    LCDOUT $FE,$C2,bilinenharf[2]
+    LCDOUT $FE,$C3,bilinenharf[3]
+    LCDOUT $FE,$C4,bilinenharf[4]
     lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
       'LCDOUT $FE,$C0,"adam asildi" 
-    else
+    else 'daha hakkýmýz var 
+    
     goto label2
     endif
     

@@ -14,51 +14,51 @@ DEFINE LCD_BITS 8
 ADCON1=7               ' ANALOG BAÐLANTIYI DÝJÝTALE ÇEVÝRÝR.
 PAUSE 100
 symbol ses=PortB.0
+
 i var byte
-j var byte
+i=13
+
 hamle VAR byte
 hamle2 VAR byte
-deger1 var byte
-deger2 var byte
-devam var byte
 
-    LCDOUT $fe,$40,0,14,31,31,31,14,0 'taþ
     LCDOUT $fe,$48,27,27,17,10,4,10,17 'makas
+    LCDOUT $fe,$40,0,14,31,31,31,14,0 'taþ
+    
     LCDOUT $fe,$50,7,14,28,14,7,14,28 'kaðýt
-    LCDOUT $fe,$58,0,14,31,31,31,14,0 'taþ
-    LCDOUT $fe,$60,27,27,17,10,4,10,17 'makas
-    LCDOUT $fe,$68,7,14,28,14,7,14,28 'kaðýt
+
 
 label:
     
     HSEROUT ["1. Oyuncu Hamleni Gir(t,k,m):",13,10]
     HSERIN [hamle]
+    
     if hamle="t" || hamle="m" || hamle="k"  then
+    
     else
         HSEROUT ["Sadece t,m,k'e basabilirsiniz:",13,10]
         goto label 
     endIF
+    
     label1:
     
     HSEROUT ["2. Oyuncu Hamleni Gir(t,k,m):",13,10]
     HSERIN  [hamle2]
+    
     if hamle2="t" || hamle2="m" || hamle2="k"  then
         GOto sonuc
     else
         HSEROUT ["Sadece t,m,k'e basabilirsiniz:",13,10]
         goto label1
     endIF
-    label2:
-    
-    
-    
+
    ' sound ses,[80,10,40,10]
 goto label
 
 sonuc:
     LCDOUT $fe,1
+    
     IF hamle="t" && hamle2="t" then
-    lcdout 0,3 ,"etkilemez"
+    lcdout 0,0 ,"etkilemez"
     LCDOUT $FE,$C0
     Lcdout "Berabere"
     sound ses,[80,10,40,10]
@@ -66,33 +66,37 @@ sonuc:
 
     IF hamle="t" && hamle2="k" then
     
-    lcdout 2,3,"kaplar"
+    lcdout 2,0,"kaplar"
     LCDOUT $FE,$C0
     Lcdout "2. oyuncu kazandi"
     sound ses,[100,10,120,10]
     endIF
+    
+    
     IF hamle="t" && hamle2="m" then
-    lcdout 0,4 ,"kirar"
+    lcdout 0,#i ,"kirar"
     LCDOUT $FE,$C0
     Lcdout "1. Oyuncu Kazandi"
         sound ses,[100,10,120,10]
     endIF
     
     IF hamle="m" && hamle2="t" then
-    lcdout 0,4,"kirar"
+    lcdout 0,1,"kirar"
     LCDOUT $FE,$C0
     Lcdout "2. Oyuncu Kazandi"
         sound ses,[100,10,120,10]
     endIF
 
     IF hamle="m" && hamle2="k" then
-    lcdout 1,5,"keser"
+    lcdout 1,2,"keser"
     LCDOUT $FE,$C0
     Lcdout "1. Oyuncu Kazandi"
         sound ses,[100,10,120,10]
     endIF
+    
+    
     IF hamle="m" && hamle2="m" then
-    lcdout 1,4,"etkilemez"
+    lcdout 1,1,"etkilemez"
     LCDOUT $FE,$C0
     Lcdout "Berabere"
     sound ses,[80,10,40,10]
@@ -100,27 +104,28 @@ sonuc:
     endIF
     
     IF hamle="k" && hamle2="t" then
-    lcdout 2,3,"kaplar"
+    lcdout 2,0,"kaplar"
     LCDOUT $FE,$C0
     Lcdout "1. Oyuncu Kazandi"
         sound ses,[100,10,120,10]
     endIF
 
     IF hamle="k" && hamle2="k" then
-    lcdout 2,5,"etkilemez"
+    lcdout 2,2,"etkilemez"
     LCDOUT $FE,$C0
     Lcdout "Berabere"
     sound ses,[80,10,40,10]
     endIF
+    
     IF hamle="k" && hamle2="m" then
-    lcdout 1,5,"keser"
+    lcdout 1,2,"keser"
     LCDOUT $FE,$C0
     Lcdout "2. Oyuncu Kazandi"
         sound ses,[100,10,120,10]
     endIF
     
     
-    goto label2
+    goto label
 goto sonuc
 
 

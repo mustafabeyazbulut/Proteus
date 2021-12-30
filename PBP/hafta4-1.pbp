@@ -14,9 +14,11 @@ DEFINE LCD_BITS 8
 ADCON1=7               ' ANALOG BAÐLANTIYI DÝJÝTALE ÇEVÝRÝR.
 PAUSE 100
 
+ k var byte  'saat
+ j var byte 'dk
 i var byte 'saniye
-j var byte 'dk
-k var byte  'saat
+
+
 
 space VAR byte
 

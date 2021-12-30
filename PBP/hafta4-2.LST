@@ -1,4 +1,4 @@
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  1
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00024 #define         LCD_RSREG                PORTE 
                       00025 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00009   DEFINE LCD_RSBIT 0     'RSNÝN BA
                             ÐLANTIÐI PÝC PORTE NÝN BÝT NUMARASI
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  2
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000030            00065 R8                              EQU     RAM_START + 010h
                       00066 ; C:\PBP\PBPPIC14.RAM           00026   A00032  FLAGS   VAR     BYTE BANK0 SYSTEM       ' Static flags
   00000032            00067 FLAGS                           EQU     RAM_START + 012h
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  3
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       02290 hserinloop CLRWDT?              ; Keep Watchdog timer clear
                           M     ifndef NO_CLRWDT
 0002   0064               M         clrwdt
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  4
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -234,7 +234,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       02421         iorlw   80h             ; Set parity
                       02422           else
                       02423         call    HSERPARITY      ; Calculate the parity
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  5
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  5
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -293,7 +293,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 001E   30FC           02961         movlw   low 15100
 001F   207F           02962         call    PAUSEUSL
                       02963 
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  6
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  6
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -352,7 +352,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0038   1C32           03014         btfss   LCDCDFLAG       ; Command this time?
 0039   2845           03015         goto    lcdchkcd        ; No
                       03016 
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  7
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  7
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -411,7 +411,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       03067 
                       03068         movf    R3, W           ; Isolate proper nibble of char
                       03069       if ((LCD_DBIT) == 0)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  8
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  8
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -470,7 +470,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       04880       endif
 0065   1903           04881         btfsc   STATUS, Z       ; Check for none left
 0066   2898           04882         goto    DONE            ; Nothing more to do
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE  9
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE  9
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -529,7 +529,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 008A   0FA1           06399         incfsz  R0 + 1, F       ; 1 / 2
 008B   2885           06400         goto    pauseusloop     ; 2 / 0
 008C   1820           06401         btfsc   R0, 0           ; 1 / 2
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 10
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 10
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -588,7 +588,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP1
                           M       endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 11
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 11
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -647,7 +647,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
                           M         bcf     STATUS, RP1
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 12
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 12
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -706,7 +706,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                       07809         MOVE?CB HSER_RCSTA, RCSTA       ; Set receive control reg
                           M         CHK?RP  RCSTA
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 13
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 13
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -765,7 +765,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 2)
                           M         bsf     STATUS, RP0
                           M       endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 14
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 14
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -824,7 +824,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 15
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 15
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -883,7 +883,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00A6   3007               M         movlw   low (007h)
 00A7   009F               M         movwf   ADCON1
                           M     endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 16
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 16
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -942,7 +942,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M             endif
                           M           endif
                           M         else
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 17
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 17
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1001,7 +1001,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     PCLATH, 3
                           M         else
                           M         bsf     PCLATH, 3
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 18
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 18
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1060,7 +1060,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00AF   3001               M         movlw   001h
                           M         L?CALL  LCDOUT
                           M         RST?RP
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 19
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 19
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1119,7 +1119,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     PCLATH, 3
                           M               else
                           M         bsf     PCLATH, 3
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 20
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 20
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1141,7 +1141,8 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
 00B1   200F               M         call    LCDOUT
                       00124 
-                      00125 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00052   label1:
+                      00125 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00023   label1:               't ye bast
+                            ýktan sonra çalýþýr
                       00126 
                       00127         LABEL?L _label1 
                           M         RST?RP
@@ -1160,9 +1161,1135 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00B2                      M _label1
                           M     endif
                       00128 
-                      00129 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00053       HSERIN [WAIT ("t"),STR i\2]
-                      00130 
-                      00131         LABEL?L L00001  
+                      00129 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00024       hserout["T tuþuna bas",13,10
+                            ]
+                      00130         HSEROUT?C       054h
+00B2   3054               M         movlw   054h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 21
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00B3   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 22
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M       endif
+                          M     endif
+                          M 
+00B4   2009               M         call    HSEROUT
+                      00131         HSEROUT?C       020h
+00B5   3020               M         movlw   020h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 23
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00B6   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00B7   2009               M         call    HSEROUT
+                      00132         HSEROUT?C       074h
+00B8   3074               M         movlw   074h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 24
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00B9   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00BA   2009               M         call    HSEROUT
+                      00133         HSEROUT?C       075h
+00BB   3075               M         movlw   075h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 25
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00BC   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 26
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00BD   2009               M         call    HSEROUT
+                      00134         HSEROUT?C       0FFFEh
+Warning[202]: Argument out of range.  Least significant bits used.
+00BE   30FE               M         movlw   0FFFEh
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 27
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00BF   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00C0   2009               M         call    HSEROUT
+                      00135         HSEROUT?C       075h
+00C1   3075               M         movlw   075h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 28
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00C2   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00C3   2009               M         call    HSEROUT
+                      00136         HSEROUT?C       06Eh
+00C4   306E               M         movlw   06Eh
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 29
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00C5   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 30
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00C6   2009               M         call    HSEROUT
+                      00137         HSEROUT?C       061h
+00C7   3061               M         movlw   061h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 31
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00C8   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00C9   2009               M         call    HSEROUT
+                      00138         HSEROUT?C       020h
+00CA   3020               M         movlw   020h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 32
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00CB   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00CC   2009               M         call    HSEROUT
+                      00139         HSEROUT?C       062h
+00CD   3062               M         movlw   062h
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 33
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00CE   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 34
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00CF   2009               M         call    HSEROUT
+                      00140         HSEROUT?C       061h
+00D0   3061               M         movlw   061h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 35
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00D1   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00D2   2009               M         call    HSEROUT
+                      00141         HSEROUT?C       073h
+00D3   3073               M         movlw   073h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 36
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00D4   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 37
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M 
+00D5   2009               M         call    HSEROUT
+                      00142         HSEROUT?C       00Dh
+00D6   300D               M         movlw   00Dh
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 38
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00D7   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00D8   2009               M         call    HSEROUT
+                      00143         HSEROUT?C       00Ah
+00D9   300A               M         movlw   00Ah
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 39
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00DA   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00DB   2009               M         call    HSEROUT
+                      00144 
+                      00145 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00025       HSERIN [WAIT ("m"),STR i\5]
+                      00146 
+                      00147         LABEL?L L00001  
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
@@ -1172,19 +2299,19 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
   00000000                M PREV_BANK = 0
                           M     ifdef PM_USED
-                          M         LALL
-                          M L00001
-                          M         XALL
-                          M     else
-00B2                      M L00001
-                          M     endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 21
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 40
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00132         HSERINWAIT?CL   074h, L00001
+                          M         LALL
+                          M L00001
+                          M         XALL
+                          M     else
+00DC                      M L00001
+                          M     endif
+                      00148         HSERINWAIT?CL   06Dh, L00001
                           M         L?CALL  HSERIN
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
@@ -1231,18 +2358,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     PCLATH, 4
                           M             endif
                           M           endif
-                          M         else
-                          M           if (CODE_SIZE > 2)
-                          M             if (((HSERIN) & 1800h) == 0)
-00B2   018A               M         clrf    PCLATH
-                          M             else
-                          M               if (((HSERIN) & 800h) == 0)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 22
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 41
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSERIN) & 1800h) == 0)
+00DC   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSERIN) & 800h) == 0)
                           M         bcf     PCLATH, 3
                           M               else
                           M         bsf     PCLATH, 3
@@ -1260,8 +2387,8 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M     endif
                           M 
-00B3   2002               M         call    HSERIN
-00B4   3C74               M         sublw   074h
+00DD   2002               M         call    HSERIN
+00DE   3C6D               M         sublw   06Dh
                           M         BIT?GOTO 0, STATUS, Z, L00001
                           M     ifdef USE_LINKER
                           M         CLRWDT?
@@ -1278,30 +2405,30 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     else
                           M       if (CODE_SIZE > 2)
                           M         if (((L00001) & 800h) == 0)
-00B5   118A               M         bcf     PCLATH, 3
+00DF   118A               M         bcf     PCLATH, 3
                           M         else
                           M         bsf     PCLATH, 3
                           M         endif
                           M       endif
                           M       if (CODE_SIZE > 4)
                           M         if (((L00001) & 1000h) == 0)
-00B6   120A               M         bcf     PCLATH, 4
+00E0   120A               M         bcf     PCLATH, 4
                           M         else
                           M         bsf     PCLATH, 4
                           M         endif
                           M       endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 42
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M     endif
                           M 
                           M     if (((STATUS) & 0ff80h) != 0)
                           M         CHK?RP  STATUS
                           M         bcf     STATUS, DC
                           M       if ((0)      == 0)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 23
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         btfss   STATUS, Z
                           M       else
                           M         btfsc   STATUS, Z
@@ -1319,15 +2446,15 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
   00000000                M PREV_BANK = 0
                           M       if ((0)      == 0)
-00B7   1D03               M         btfss   STATUS, Z
+00E1   1D03               M         btfss   STATUS, Z
                           M       else
                           M         btfsc   STATUS, Z
                           M       endif
                           M     endif
                           M 
-00B8   28B2               M         goto    L00001
-                      00133         HSERINCOUNT?C   002h
-                          M         MOVE?CB 002h, R4 + 1
+00E2   28DC               M         goto    L00001
+                      00149         HSERINCOUNT?C   005h
+                          M         MOVE?CB 005h, R4 + 1
                           M         CHK?RP  R4 + 1
                           M     if (((R4 + 1) & 180h) == 0)
                           M       if (PREV_BANK == 1)
@@ -1349,18 +2476,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M       if (PREV_BANK == 2)
                           M         bsf     STATUS, RP0
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 43
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bcf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP1
                           M       endif
                           M PREV_BANK = 1
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 24
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M     endif
                           M 
                           M     if (((R4 + 1) & 180h) == 100h)
@@ -1390,13 +2517,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M PREV_BANK = 3
                           M     endif
-                          M     if (low (002h) == 0)
+                          M     if (low (005h) == 0)
                           M         clrf    R4 + 1
                           M     else
-00B9   3002               M         movlw   low (002h)
-00BA   00A9               M         movwf   R4 + 1
+00E3   3005               M         movlw   low (005h)
+00E4   00A9               M         movwf   R4 + 1
                           M     endif
-                      00134         HSERINSTR?B     _i
+                      00150         HSERINSTR?B     _i
                           M         MOVE?CW HSERIN, R8
                           M     ifdef USE_LINKER
                           M         CHK?RP  R8
@@ -1408,18 +2535,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         MOVE?CB low (HSERIN), R8
                           M         CHK?RP  R8
                           M     if (((R8)    & 180h) == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 44
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       if (PREV_BANK == 1)
                           M         bcf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
                           M         bcf     STATUS, RP1
                           M       endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 25
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
                           M         bcf     STATUS, RP1
@@ -1467,18 +2594,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 3
-                          M     endif
-                          M     if (low (low (HSERIN)) == 0)
-                          M         clrf    R8
-                          M     else
-00BB   3002               M         movlw   low (low (HSERIN))
-00BC   00B0               M         movwf   R8
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 26
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 45
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M     endif
+                          M     if (low (low (HSERIN)) == 0)
+                          M         clrf    R8
+                          M     else
+00E5   3002               M         movlw   low (low (HSERIN))
+00E6   00B0               M         movwf   R8
                           M     endif
                           M         MOVE?CB high (HSERIN), (R8) + 1
                           M         CHK?RP  (R8) + 1
@@ -1526,25 +2653,25 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
                           M     if ((((R8) + 1) & 180h) == 180h)
                           M       if (PREV_BANK == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 46
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bsf     STATUS, RP0
                           M         bsf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 1)
                           M         bsf     STATUS, RP1
                           M       endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 27
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       if (PREV_BANK == 2)
                           M         bsf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 3
                           M     endif
                           M     if (low (high (HSERIN)) == 0)
-00BD   01B1               M         clrf    (R8) + 1
+00E7   01B1               M         clrf    (R8) + 1
                           M     else
                           M         movlw   low (high (HSERIN))
                           M         movwf   (R8) + 1
@@ -1585,18 +2712,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 0)
                           M         bsf     STATUS, RP1
                           M       endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 47
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       if (PREV_BANK == 1)
                           M         bcf     STATUS, RP0
                           M         bsf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 28
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       endif
                           M PREV_BANK = 2
                           M     endif
@@ -1615,14 +2742,14 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = 3
                           M     endif
                           M     if (low (high (_i)) == 0)
-00BE   01A5               M         clrf    R2 + 1
+00E8   01A5               M         clrf    R2 + 1
                           M     else
                           M         movlw   low (high (_i))
                           M         movwf   R2 + 1
                           M     endif
                           M       endif
                           M         MOVE?CA low (_i)
-00BF   3038               M         movlw   low (low (_i))
+00E9   3038               M         movlw   low (low (_i))
                           M         L?CALL  SERIN2STR
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
@@ -1644,18 +2771,18 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     PCLATH, 3
                           M         else
                           M         bsf     PCLATH, 3
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 48
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         endif
                           M         endif
                           M         if (CODE_SIZE > 4)
                           M           if (((SERIN2STR) & 1000h) == 0)
                           M         bcf     PCLATH, 4
                           M           else
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 29
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bsf     PCLATH, 4
                           M           endif
                           M         endif
@@ -1678,7 +2805,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         else
                           M           if (CODE_SIZE > 2)
                           M             if (((SERIN2STR) & 1800h) == 0)
-00C0   018A               M         clrf    PCLATH
+00EA   018A               M         clrf    PCLATH
                           M             else
                           M               if (((SERIN2STR) & 800h) == 0)
                           M         bcf     PCLATH, 3
@@ -1698,23 +2825,984 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M     endif
                           M 
-00C1   2053               M         call    SERIN2STR
-                      00135 
-                      00136 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00054       HSEROUT [STR i\2,13,10]
-                      00137         HSEROUTCOUNT?C  002h
-                          M         MOVE?CB 002h, R4 + 1
+00EB   2053               M         call    SERIN2STR
+                      00151 
+                      00152 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00026       HSEROUT ["basilan tus=",STR 
+                            i\5,13,10]
+                      00153         HSEROUT?C       062h
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 49
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00EC   3062               M         movlw   062h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00ED   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 50
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00EE   2009               M         call    HSEROUT
+                      00154         HSEROUT?C       061h
+00EF   3061               M         movlw   061h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 51
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00F0   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00F1   2009               M         call    HSEROUT
+                      00155         HSEROUT?C       073h
+00F2   3073               M         movlw   073h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 52
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00F3   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 53
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     endif
+                          M 
+00F4   2009               M         call    HSEROUT
+                      00156         HSEROUT?C       069h
+00F5   3069               M         movlw   069h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 54
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M             if (((HSEROUT) & 1800h) == 0)
+00F6   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00F7   2009               M         call    HSEROUT
+                      00157         HSEROUT?C       06Ch
+00F8   306C               M         movlw   06Ch
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 55
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00F9   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00FA   2009               M         call    HSEROUT
+                      00158         HSEROUT?C       061h
+00FB   3061               M         movlw   061h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 56
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00FC   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 57
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+00FD   2009               M         call    HSEROUT
+                      00159         HSEROUT?C       06Eh
+00FE   306E               M         movlw   06Eh
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 58
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+00FF   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+0100   2009               M         call    HSEROUT
+                      00160         HSEROUT?C       020h
+0101   3020               M         movlw   020h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 59
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+0102   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+0103   2009               M         call    HSEROUT
+                      00161         HSEROUT?C       074h
+0104   3074               M         movlw   074h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 60
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+0105   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 61
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+0106   2009               M         call    HSEROUT
+                      00162         HSEROUT?C       075h
+0107   3075               M         movlw   075h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 62
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+0108   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+0109   2009               M         call    HSEROUT
+                      00163         HSEROUT?C       073h
+010A   3073               M         movlw   073h
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 63
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+010B   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+010C   2009               M         call    HSEROUT
+                      00164         HSEROUT?C       03Dh
+010D   303D               M         movlw   03Dh
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 64
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+010E   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 65
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+010F   2009               M         call    HSEROUT
+                      00165         HSEROUTCOUNT?C  005h
+                          M         MOVE?CB 005h, R4 + 1
                           M         CHK?RP  R4 + 1
                           M     if (((R4 + 1) & 180h) == 0)
                           M       if (PREV_BANK == 1)
                           M         bcf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 30
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bcf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
@@ -1745,6 +3833,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 1)
                           M         bcf     STATUS, RP0
                           M         bsf     STATUS, RP1
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 66
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       endif
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
@@ -1765,19 +3859,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M PREV_BANK = 3
                           M     endif
-                          M     if (low (002h) == 0)
+                          M     if (low (005h) == 0)
                           M         clrf    R4 + 1
                           M     else
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 31
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-00C2   3002               M         movlw   low (002h)
-00C3   00A9               M         movwf   R4 + 1
+0110   3005               M         movlw   low (005h)
+0111   00A9               M         movwf   R4 + 1
                           M     endif
-                      00138         HSEROUTSTRN?B   _i
+                      00166         HSEROUTSTRN?B   _i
                           M         MOVE?CW HSEROUTJ, R8
                           M     ifdef USE_LINKER
                           M         CHK?RP  R8
@@ -1804,6 +3892,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
                           M     if (((R8)    & 180h) == 80h)
                           M       if (PREV_BANK == 0)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 67
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bsf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
@@ -1827,12 +3921,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
                           M       endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 32
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M PREV_BANK = 2
                           M     endif
                           M 
@@ -1852,8 +3940,8 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     if (low (low (HSEROUTJ)) == 0)
                           M         clrf    R8
                           M     else
-00C4   3008               M         movlw   low (low (HSEROUTJ))
-00C5   00B0               M         movwf   R8
+0112   3008               M         movlw   low (low (HSEROUTJ))
+0113   00B0               M         movwf   R8
                           M     endif
                           M         MOVE?CB high (HSEROUTJ), (R8) + 1
                           M         CHK?RP  (R8) + 1
@@ -1863,6 +3951,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M       if (PREV_BANK == 2)
                           M         bcf     STATUS, RP1
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 68
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       endif
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP0
@@ -1886,12 +3980,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M 
                           M     if ((((R8) + 1) & 180h) == 100h)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 33
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       if (PREV_BANK == 0)
                           M         bsf     STATUS, RP1
                           M       endif
@@ -1919,9 +4007,15 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = 3
                           M     endif
                           M     if (low (high (HSEROUTJ)) == 0)
-00C6   01B1               M         clrf    (R8) + 1
+0114   01B1               M         clrf    (R8) + 1
                           M     else
                           M         movlw   low (high (HSEROUTJ))
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 69
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         movwf   (R8) + 1
                           M     endif
                           M     endif
@@ -1945,12 +4039,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     if (((R2 + 1) & 180h) == 80h)
                           M       if (PREV_BANK == 0)
                           M         bsf     STATUS, RP0
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 34
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M       endif
                           M       if (PREV_BANK == 2)
                           M         bsf     STATUS, RP0
@@ -1981,6 +4069,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     STATUS, RP0
                           M         bsf     STATUS, RP1
                           M       endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 70
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M       if (PREV_BANK == 1)
                           M         bsf     STATUS, RP1
                           M       endif
@@ -1990,26 +4084,20 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M PREV_BANK = 3
                           M     endif
                           M     if (low (high (_i)) == 0)
-00C7   01A5               M         clrf    R2 + 1
+0115   01A5               M         clrf    R2 + 1
                           M     else
                           M         movlw   low (high (_i))
                           M         movwf   R2 + 1
                           M     endif
                           M       endif
                           M         MOVE?CA low (_i)
-00C8   3038               M         movlw   low (low (_i))
+0116   3038               M         movlw   low (low (_i))
                           M         L?CALL  SEROUT2STRN
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
                           M     endif
                           M     if ((PREV_BANK & 2) != 0)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 35
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         bcf     STATUS, RP1
                           M     endif
   00000000                M PREV_BANK = 0
@@ -2040,6 +4128,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M             if (((SEROUT2STRN) & 800h) == 0)
                           M         bcf     PCLATH, 3
                           M             else
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 71
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         bsf     PCLATH, 3
                           M             endif
                           M           endif
@@ -2053,7 +4147,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         else
                           M           if (CODE_SIZE > 2)
                           M             if (((SEROUT2STRN) & 1800h) == 0)
-00C9   018A               M         clrf    PCLATH
+0117   018A               M         clrf    PCLATH
                           M             else
                           M               if (((SEROUT2STRN) & 800h) == 0)
                           M         bcf     PCLATH, 3
@@ -2063,12 +4157,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M               if (CODE_SIZE > 4)
                           M                 if (((SEROUT2STRN) & 1000h) == 0)
                           M         bcf     PCLATH, 4
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 36
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M                 else
                           M         bsf     PCLATH, 4
                           M                 endif   
@@ -2079,9 +4167,93 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M     endif
                           M 
-00CA   2063               M         call    SEROUT2STRN
-                      00139         HSEROUT?C       00Dh
-00CB   300D               M         movlw   00Dh
+0118   2063               M         call    SEROUT2STRN
+                      00167         HSEROUT?C       00Dh
+0119   300D               M         movlw   00Dh
+                          M         L?CALL  HSEROUT
+                          M         RST?RP
+                          M     if ((PREV_BANK & 1) != 0)
+                          M         bcf     STATUS, RP0
+                          M     endif
+                          M     if ((PREV_BANK & 2) != 0)
+                          M         bcf     STATUS, RP1
+                          M     endif
+  00000000                M PREV_BANK = 0
+                          M 
+                          M     ifdef USE_LINKER
+                          M       if (CODE_SIZE > 2)
+                          M         pagesel HSEROUT
+                          M       endif
+                          M     else
+                          M       if ((HSEROUT) < 1)
+                          M         if (CODE_SIZE > 2)
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 72
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                          M           if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M         else
+                          M         bsf     PCLATH, 3
+                          M         endif
+                          M         endif
+                          M         if (CODE_SIZE > 4)
+                          M           if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M           else
+                          M         bsf     PCLATH, 4
+                          M           endif
+                          M         endif
+                          M       else
+                          M         if ((HSEROUT) > $)
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M             else
+                          M         bsf     PCLATH, 3
+                          M             endif
+                          M           endif
+                          M           if (CODE_SIZE > 4)
+                          M             if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M             else
+                          M         bsf     PCLATH, 4
+                          M             endif
+                          M           endif
+                          M         else
+                          M           if (CODE_SIZE > 2)
+                          M             if (((HSEROUT) & 1800h) == 0)
+011A   018A               M         clrf    PCLATH
+                          M             else
+                          M               if (((HSEROUT) & 800h) == 0)
+                          M         bcf     PCLATH, 3
+                          M               else
+                          M         bsf     PCLATH, 3
+                          M               endif
+                          M               if (CODE_SIZE > 4)
+                          M                 if (((HSEROUT) & 1000h) == 0)
+                          M         bcf     PCLATH, 4
+                          M                 else
+                          M         bsf     PCLATH, 4
+                          M                 endif   
+                          M               endif
+                          M             endif
+                          M           endif
+                          M         endif
+                          M       endif
+                          M     endif
+                          M 
+011B   2009               M         call    HSEROUT
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 73
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00168         HSEROUT?C       00Ah
+011C   300A               M         movlw   00Ah
                           M         L?CALL  HSEROUT
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
@@ -2122,12 +4294,6 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M             endif
                           M           endif
                           M           if (CODE_SIZE > 4)
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 37
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M             if (((HSEROUT) & 1000h) == 0)
                           M         bcf     PCLATH, 4
                           M             else
@@ -2137,8 +4303,14 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         else
                           M           if (CODE_SIZE > 2)
                           M             if (((HSEROUT) & 1800h) == 0)
-00CC   018A               M         clrf    PCLATH
+011D   018A               M         clrf    PCLATH
                           M             else
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 74
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M               if (((HSEROUT) & 800h) == 0)
                           M         bcf     PCLATH, 3
                           M               else
@@ -2157,95 +4329,11 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M     endif
                           M 
-00CD   2009               M         call    HSEROUT
-                      00140         HSEROUT?C       00Ah
-00CE   300A               M         movlw   00Ah
-                          M         L?CALL  HSEROUT
-                          M         RST?RP
-                          M     if ((PREV_BANK & 1) != 0)
-                          M         bcf     STATUS, RP0
-                          M     endif
-                          M     if ((PREV_BANK & 2) != 0)
-                          M         bcf     STATUS, RP1
-                          M     endif
-  00000000                M PREV_BANK = 0
-                          M 
-                          M     ifdef USE_LINKER
-                          M       if (CODE_SIZE > 2)
-                          M         pagesel HSEROUT
-                          M       endif
-                          M     else
-                          M       if ((HSEROUT) < 1)
-                          M         if (CODE_SIZE > 2)
-                          M           if (((HSEROUT) & 800h) == 0)
-                          M         bcf     PCLATH, 3
-                          M         else
-                          M         bsf     PCLATH, 3
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 38
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
-                          M         endif
-                          M         endif
-                          M         if (CODE_SIZE > 4)
-                          M           if (((HSEROUT) & 1000h) == 0)
-                          M         bcf     PCLATH, 4
-                          M           else
-                          M         bsf     PCLATH, 4
-                          M           endif
-                          M         endif
-                          M       else
-                          M         if ((HSEROUT) > $)
-                          M           if (CODE_SIZE > 2)
-                          M             if (((HSEROUT) & 800h) == 0)
-                          M         bcf     PCLATH, 3
-                          M             else
-                          M         bsf     PCLATH, 3
-                          M             endif
-                          M           endif
-                          M           if (CODE_SIZE > 4)
-                          M             if (((HSEROUT) & 1000h) == 0)
-                          M         bcf     PCLATH, 4
-                          M             else
-                          M         bsf     PCLATH, 4
-                          M             endif
-                          M           endif
-                          M         else
-                          M           if (CODE_SIZE > 2)
-                          M             if (((HSEROUT) & 1800h) == 0)
-00CF   018A               M         clrf    PCLATH
-                          M             else
-                          M               if (((HSEROUT) & 800h) == 0)
-                          M         bcf     PCLATH, 3
-                          M               else
-                          M         bsf     PCLATH, 3
-                          M               endif
-                          M               if (CODE_SIZE > 4)
-                          M                 if (((HSEROUT) & 1000h) == 0)
-                          M         bcf     PCLATH, 4
-                          M                 else
-                          M         bsf     PCLATH, 4
-                          M                 endif   
-                          M               endif
-                          M             endif
-                          M           endif
-                          M         endif
-                          M       endif
-                          M     endif
-                          M 
-00D0   2009               M         call    HSEROUT
-                      00141 
-                      00142 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00055   goto label1
-                      00143         GOTO?L  _label1
+011E   2009               M         call    HSEROUT
+                      00169 
+                      00170 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA4-2.PBP    00027   goto label1
+                      00171         GOTO?L  _label1
                           M         L?GOTO  _label1
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 39
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M     ifdef USE_LINKER
                           M         CLRWDT?
                           M     else
@@ -2276,6 +4364,12 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     PCLATH, 3
                           M           endif
                           M         endif
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 75
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
                           M         if (CODE_SIZE > 4)
                           M           if (((_label1) & 1000h) == 0)
                           M         bcf     PCLATH, 4
@@ -2299,16 +4393,10 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     PCLATH, 4
                           M             endif
                           M           endif
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 40
-
-
-LOC  OBJECT CODE     LINE SOURCE TEXT
-  VALUE
-
                           M         else
                           M           if (CODE_SIZE > 2)
                           M             if (((_label1) & 1800h) == 0)
-00D1   018A               M         clrf    PCLATH
+011F   018A               M         clrf    PCLATH
                           M             else
                           M               if (((_label1) & 800h) == 0)
                           M         bcf     PCLATH, 3
@@ -2328,10 +4416,10 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M     endif
                           M 
-00D2   28B2               M         goto    _label1
-                      00144 
-                      00145         END
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 41
+0120   28B2               M         goto    _label1
+                      00172 
+                      00173         END
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 76
 
 
 SYMBOL TABLE
@@ -2390,7 +4478,7 @@ CCP2IE                            00000000
 CCP2IF                            00000000
 CCP2M0                            00000000
 CCP2M1                            00000001
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 42
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 77
 
 
 SYMBOL TABLE
@@ -2449,7 +4537,7 @@ EEPROM_START                      00002100
 F                                 00000001
 FERR                              00000002
 FLAGS                             00000032
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 43
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 78
 
 
 SYMBOL TABLE
@@ -2505,10 +4593,10 @@ INTF                              00000001
 IRP                               00000007
 JUMPMAN                           00000093
 JUMPMAN_USED                      00000001
-L00001                            000000B2
+L00001                            000000DC
 L?CALL                            
 L?GOTO                            
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 44
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 79
 
 
 SYMBOL TABLE
@@ -2567,7 +4655,7 @@ NOT_TO                            00000004
 NOT_TX8                           00000006
 NOT_W                             00000002
 NOT_WRITE                         00000002
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 45
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 80
 
 
 SYMBOL TABLE
@@ -2626,7 +4714,7 @@ R7                                0000002E
 R8                                00000030
 RA0                               00000000
 RA1                               00000001
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 46
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 81
 
 
 SYMBOL TABLE
@@ -2685,7 +4773,7 @@ RP0                               00000005
 RP1                               00000006
 RR1                               00000036
 RR2                               00000037
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 47
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 82
 
 
 SYMBOL TABLE
@@ -2744,7 +4832,7 @@ TMR1H                             0000000F
 TMR1IE                            00000000
 TMR1IF                            00000000
 TMR1L                             0000000E
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 48
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 83
 
 
 SYMBOL TABLE
@@ -2803,7 +4891,7 @@ TX9                               00000006
 TX9D                              00000000
 TXD8                              00000000
 TXEN                              00000005
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 49
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 84
 
 
 SYMBOL TABLE
@@ -2862,7 +4950,7 @@ _WRT_ENABLE_OFF                   00003DFF
 _WRT_ENABLE_ON                    00003FFF
 _WRT_OFF                          00003DFF
 _WRT_ON                           00003FFF
-MPASM  5.44                      HAFTA4-2.ASM   11-2-2021  16:49:50         PAGE 50
+MPASM  5.44                      HAFTA4-2.ASM   12-6-2021  12:45:36         PAGE 85
 
 
 SYMBOL TABLE
@@ -2892,17 +4980,18 @@ MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-00C0 : XXXXXXXXXXXXXXXX XXX------------- ---------------- ----------------
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX X--------------- ----------------
 2000 : -------X-------- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Words Used:   211
-Program Memory Words Free:  7981
+Program Memory Words Used:   289
+Program Memory Words Free:  7903
 
 
 Errors   :     0
-Warnings :     0 reported,     0 suppressed
+Warnings :     1 reported,     0 suppressed
 Messages :     0 reported,     3 suppressed
 
 

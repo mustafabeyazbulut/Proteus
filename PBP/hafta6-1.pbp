@@ -15,19 +15,17 @@ ADCON1=7               ' ANALOG BAÐLANTIYI DÝJÝTALE ÇEVÝRÝR.
 PAUSE 100
 symbol ses=PortB.0
 
-i var byte
-i=13
 
 hamle VAR byte
 hamle2 VAR byte
 
-    LCDOUT $fe,$48,27,27,17,10,4,10,17 'makas
     LCDOUT $fe,$40,0,14,31,31,31,14,0 'taþ
-    
+    LCDOUT $fe,$48,27,27,17,10,4,10,17 'makas
     LCDOUT $fe,$50,7,14,28,14,7,14,28 'kaðýt
 
 
 label:
+
     
     HSEROUT ["1. Oyuncu Hamleni Gir(t,k,m):",13,10]
     HSERIN [hamle]
@@ -74,7 +72,7 @@ sonuc:
     
     
     IF hamle="t" && hamle2="m" then
-    lcdout 0,#i ,"kirar"
+    lcdout 0,1,"kirar"
     LCDOUT $FE,$C0
     Lcdout "1. Oyuncu Kazandi"
         sound ses,[100,10,120,10]

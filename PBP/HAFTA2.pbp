@@ -1,6 +1,6 @@
 ' while koþul wend
 
-TRISB=%00000011
+TRISB=%00000011  ' 1giriþ portu 0 çýkýþ portu
 
 TRISC=0
 PORTC=0

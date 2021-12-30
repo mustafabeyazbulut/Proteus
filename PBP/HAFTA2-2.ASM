@@ -81,8 +81,8 @@ _TRISH           		EQU	 TRISC
 
 ; C:\PBP\16F877.BAS        	00027	        include "PBPPIC14.RAM"
 
-; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP	00002	TRISB=%11110000 
-	MOVE?CB	0F0h, TRISB
+; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP	00002	TRISB=%10000000 
+	MOVE?CB	080h, TRISB
 
 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP	00006	PORTB=0  'Biz buna çýkýþ portunutemizlemediyoruz.Eðerbunu yapmazsak daha önceden aklýnda kalan bilgiye göre ilk çalýþtýrmada LEDlerin bazýlarý yanar bazýlarý söner
 	MOVE?CB	000h, PORTB

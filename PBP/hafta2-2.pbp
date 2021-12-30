@@ -1,5 +1,5 @@
 'BUTONA BASILMADIÐINDA ÝÞLEM SIFIRLANSIN
-TRISB=%11110000 
+TRISB=%10000000 
 'komutu ile 8 bitlik TRISB nin içeriði olur. 
 'En soldaki bitten saða doðru sýrayla RB7, RB6, RB5, RB4, RB3, RB2, RB1, RB0 bacaklarýnýn ne olacaðý buradan belirlenir. 
 '0 olmasý çýkýþ olmasý 1 olmasý giriþ olmasý demektir

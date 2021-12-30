@@ -44,6 +44,8 @@ LCDOUT $FE,$58,4,8,23,8,4,0,0,0   ' ok
 
 
 label:
+
+
      bilinen=0
      yanlishamle=5
      tahmin=" "
@@ -65,7 +67,7 @@ label:
 
     
     
-    HSEROUT [13,10,"1. Oyuncu 5 karakterli harfsini girsin:",13,10]
+    HSEROUT [13,10,"1. Oyuncu 5 karakterli kelimesini girsin:",13,10]
     for i = 0 to 4
     HSERIN [harf[i]]
     HSEROUT ["*"]
@@ -79,16 +81,17 @@ label:
     HSERIN  [tahmin]
     
     
-    for i=0 to 4
-        if harf[i]=tahmin and harfkontrol[i]=0 then
-            harfkontrol[i]=1
-            bilinenharf[i]=harf[i]
-            sound ses,[100,10,120,10] 
-        endif
-    next i
+        for i=0 to 4
+            if harf[i]=tahmin and harfkontrol[i]=0 then
+                harfkontrol[i]=1
+                bilinenharf[i]=harf[i]
+                sound ses,[100,10,120,10] 
+                'i=4 ' break için koyuldu
+            endif
+        next i
     
 '    if harf[0]=tahmin && harfkontrol[0]=0 then
-'    harfkontrol[0]=1
+'    harfkontrol[0]=1       'bilinmiþ oldu
 '    bilinenharf[0]=harf[0]
 '    sound ses,[100,10,120,10] 
 '    endif   
@@ -186,9 +189,9 @@ label:
        LCDOUT $FE,$C0,"Kazandiniz          " 
      
     elseif yanlishamle=0 then
-    
+     ' kaybetme durumu
     LCDOUT $FE,1
-    LCDOUT 1,2,3
+    LCDOUT 1,2,3,"kaybettiniz"
     LCDOUT $FE,$C0,bilinenharf[0]   
     LCDOUT $FE,$C1,bilinenharf[1]
     LCDOUT $FE,$C2,bilinenharf[2]
@@ -196,6 +199,7 @@ label:
     LCDOUT $FE,$C4,bilinenharf[4]
     lcdout $fe,$C5," Kalan Hamle:",#yanlishamle
       'LCDOUT $FE,$C0,"adam asildi" 
+      
     else 'daha hakkýmýz var 
     
     goto label2

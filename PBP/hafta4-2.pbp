@@ -19,41 +19,10 @@ i VAR byte
 lcdout $fe,1
 
 
-'label:
-'       HSERIN [i]
-'       HSEROUT [i]
-'      lcdout i
-'     IF i=" " THEN LCDOUT $fe,1
-'GOTO label
-
-'label1:
-'    HSERIN 5000,git,[i]
-'    HSEROUT ["Girilen Karakter:",i,13,10]
-'goto label1
-
-'git:
-'    HSEROUT ["KARDO GIR ARTIK",13,10]
-'goto git    
-
-'label:
-'    HSERIN [DEC i]
-'    HSEROUT [DEC i,13,10]
-'    LCDOUT $fe,1,#i
-'goto label
-
-'label:
-'    HSERIN [DEC2 i]
-'    HSEROUT [DEC2 i,13,10]
-'    LCDOUT $fe,1,#i
-'goto label
-'label: hata var
-'    HSERIN [SKIP 3,i]
-'    HSEROUT [3,13,10]
-'goto label
-
 
 label1:               't ye bastýktan sonra çalýþýr
-    HSERIN [WAIT ("t"),STR i\2]
-    HSEROUT [STR i\2,13,10]
+    hserout["T tuþuna bas",13,10]
+    HSERIN [WAIT ("m"),STR i\5]
+    HSEROUT ["basilan tus=",STR i\5,13,10]
 goto label1
   

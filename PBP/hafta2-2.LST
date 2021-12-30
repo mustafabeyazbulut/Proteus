@@ -1,4 +1,4 @@
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  1
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                             r
   00000020            00027 R0                              EQU     RAM_START + 000h
                       00028 ; C:\PBP\PBPPIC14.RAM           00013   A00022  R1      VAR     WORD BANK0 SYSTEM       ' System Registe
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  2
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -116,7 +116,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00071         LIST
                       00069         INCLUDE "C:\PBP\PBPPIC14.LIB"
                       00001 ;******************************************************************
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  3
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -175,7 +175,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 001D   281E           06402         goto    $ + 1           ; 2 / 0 Burn an extra cycle
 001E   1CA0           06403         btfss   R0, 1           ; 1 / 2
 001F   2822           06404         goto    pauseusdone     ; 2 / 0
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  4
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -213,8 +213,8 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00081 
                       00082 ; C:\PBP\16F877.BAS             00027           include "PBPPIC14.RAM"
                       00083 
-                      00084 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00002   TRISB=%11110000 
-                      00085         MOVE?CB 0F0h, TRISB
+                      00084 ; C:\USERS\MUSTAFA\DOCUMENTS\GITHUB\PROTEUS\PBP\HAFTA2-2.PBP    00002   TRISB=%10000000 
+                      00085         MOVE?CB 080h, TRISB
                           M         CHK?RP  TRISB
                           M     if (((TRISB) & 180h) == 0)
                           M       if (PREV_BANK == 1)
@@ -234,7 +234,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 0)
 0028   1683               M         bsf     STATUS, RP0
                           M       endif
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  5
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  5
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -277,10 +277,10 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       endif
                           M PREV_BANK = 3
                           M     endif
-                          M     if (low (0F0h) == 0)
+                          M     if (low (080h) == 0)
                           M         clrf    TRISB
                           M     else
-0029   30F0               M         movlw   low (0F0h)
+0029   3080               M         movlw   low (080h)
 002A   0086               M         movwf   TRISB
                           M     endif
                       00086 
@@ -293,7 +293,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 002B   1283               M         bcf     STATUS, RP0
                           M       endif
                           M       if (PREV_BANK == 2)
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  6
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  6
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -352,7 +352,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     if (low (000h) == 0)
 002C   0186               M         clrf    PORTB
                           M     else
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  7
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  7
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -411,7 +411,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M         BIT?GOTO 0, PORTB, 007h,  L00002
                           M     ifdef USE_LINKER
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  8
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  8
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -470,7 +470,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       else
                           M         btfsc   PORTB, 007h
                           M       endif
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE  9
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE  9
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -529,7 +529,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP0
                           M       endif
                           M PREV_BANK = 2
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 10
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 10
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -588,7 +588,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M     endif
                           M 
                           M     if (((_i)    & 180h) == 80h)
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 11
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 11
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -647,7 +647,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP0
                           M         bcf     STATUS, RP1
                           M       endif
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 12
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 12
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -706,7 +706,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         MOVE?CA 064h
 0035   3064               M         movlw   low (064h)
                           M         L?CALL  PAUSE
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 13
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 13
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -765,7 +765,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M               if (((PAUSE) & 800h) == 0)
                           M         bcf     PCLATH, 3
                           M               else
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 14
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 14
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -824,7 +824,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     PCLATH, 3
                           M           else
                           M         bsf     PCLATH, 3
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 15
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 15
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -883,7 +883,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         RST?RP
                           M     if ((PREV_BANK & 1) != 0)
                           M         bcf     STATUS, RP0
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 16
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 16
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -942,7 +942,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bsf     STATUS, RP1
                           M       endif
                           M       if (PREV_BANK == 3)
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 17
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 17
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1001,7 +1001,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M       if (PREV_BANK == 3)
                           M         bcf     STATUS, RP1
                           M       endif
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 18
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 18
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1060,7 +1060,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M         bcf     STATUS, RP0
                           M     endif
                           M     if ((PREV_BANK & 2) != 0)
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 19
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 19
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1119,7 +1119,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M               if (CODE_SIZE > 4)
                           M                 if (((_label) & 1000h) == 0)
                           M         bcf     PCLATH, 4
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 20
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 20
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -1138,7 +1138,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 003D   282D               M         goto    _label
                       00120 
                       00121         END
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 21
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 21
 
 
 SYMBOL TABLE
@@ -1197,7 +1197,7 @@ CCP2CON                           0000001D
 CCP2IE                            00000000
 CCP2IF                            00000000
 CCP2M0                            00000000
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 22
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 22
 
 
 SYMBOL TABLE
@@ -1256,7 +1256,7 @@ EEPGD                             00000007
 EEPROM_END                        000021FF
 EEPROM_START                      00002100
 F                                 00000001
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 23
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 23
 
 
 SYMBOL TABLE
@@ -1315,7 +1315,7 @@ LCD_RSREG                         00000005
 LCD_RWBIT                         00000004
 LCD_RWREG                         00000005
 MOVE?AB                           
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 24
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 24
 
 
 SYMBOL TABLE
@@ -1374,7 +1374,7 @@ PCFG1                             00000001
 PCFG2                             00000002
 PCFG3                             00000003
 PCL                               00000002
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 25
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 25
 
 
 SYMBOL TABLE
@@ -1433,7 +1433,7 @@ RBIE                              00000003
 RBIF                              00000000
 RC0                               00000000
 RC1                               00000001
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 26
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 26
 
 
 SYMBOL TABLE
@@ -1492,7 +1492,7 @@ SSPCON2                           00000091
 SSPEN                             00000005
 SSPIE                             00000003
 SSPIF                             00000003
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 27
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 27
 
 
 SYMBOL TABLE
@@ -1551,7 +1551,7 @@ TRISB2                            00000002
 TRISB3                            00000003
 TRISB4                            00000004
 TRISB5                            00000005
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 28
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 28
 
 
 SYMBOL TABLE
@@ -1610,7 +1610,7 @@ _CP_HALF                          00001FDF
 _CP_OFF                           00003FFF
 _CP_UPPER_256                     00002FEF
 _DEBUG_OFF                        00003FFF
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 29
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 29
 
 
 SYMBOL TABLE
@@ -1657,7 +1657,7 @@ pauseloop                         00000003
 pauseusdone                       00000022
 pauseush                          00000018
 pauseusloop                       00000015
-MPASM  5.44                      HAFTA2-2.ASM   12-1-2021  19:56:14         PAGE 30
+MPASM  5.44                      HAFTA2-2.ASM   12-6-2021  11:49:52         PAGE 30
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
